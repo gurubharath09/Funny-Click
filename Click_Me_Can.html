@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+        body {
+            margin: 0;
+            overflow: hidden; 
+            height: 100vh;
+            width: 100vw;
+            font-family: sans-serif;
+            touch-action: none; 
+            }
+   
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Click Button If You Can.......</h1>
+    <button  id="id1" onmouseover="func()  " ontouchstart="func()"  style="  background-color: aqua; position: absolute;  transition: 100ms ease-in;">Click</button>
+</body>
+<script>
+    function func()
+    {
+          const btn = document.getElementById("id1");
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            const maxLeft = screenWidth - btn.offsetWidth;
+            const maxTop = screenHeight - btn.offsetHeight;
+        
+            let randomLeft = Math.floor(Math.random() * maxLeft);
+            let randomTop = Math.floor(Math.random() * maxTop);
+            
+            
+            
+            // Apply coordinates directly to top and left positions
+            btn.style.left = `${randomLeft}px`;
+            btn.style.top = `${randomTop}px`;
+        
+    }
+</script>
+</html>
